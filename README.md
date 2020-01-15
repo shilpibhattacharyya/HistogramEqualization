@@ -5,5 +5,6 @@ This repository contains code to achieve histogram equlization to improve the co
 
 
 ## Example results
+![Sample Result](images/res.png)
 
 
