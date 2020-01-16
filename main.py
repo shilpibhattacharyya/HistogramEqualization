@@ -7,7 +7,7 @@ import os
 import sys
 import cv2
 import numpy as np
-#from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt
 
 def help_message():
     print("Usage: [Input_Options] [Output_Options]")
@@ -70,11 +70,21 @@ def histogram_equalization(img_in):
     equ_r = cv2.equalizeHist(r)
     equ = cv2.merge((equ_b, equ_g, equ_r))
     #print(equ)
-    cv2.imwrite('output_name2.png', equ)
+    #cv2.imwrite('output_name2.png', equ)
     res = np.hstack((img_in,equ)) #stacking images side-by-side
     cv2.imwrite('res_out.png',res)
 
     return True, img_out
+
+def generate_hist(img, opt):
+    
+    hist,bins = np.histogram(img.flatten(),256,[0,256])
+    cdf = hist.cumsum()
+    cdf_normalized = cdf * hist.max()/ cdf.max()
+    plt.hist(img.flatten(),256,[0,256], color = 'r')
+    plt.xlim([0,256])
+    #plt.legend(('cdf','histogram'), loc = 'upper left')
+    plt.savefig('hist'+"_"+ opt);
 
 
 
@@ -88,11 +98,16 @@ if __name__ == '__main__':
     else:
         # Read in input images
         input_image = cv2.imread(sys.argv[1], cv2.IMREAD_COLOR)
+        generate_hist(input_image,"inp")
 
         # Histogram equalization
         succeed, output_image = histogram_equalization(input_image)
-
+        generate_hist(output_image,"out")
         # Write out the result
-        output_name = sys.argv[2] + "output1.png"
+        output_name = sys.argv[2] + "result.png"
         cv2.imwrite(output_name, output_image)
+        
+    
+
+
     
