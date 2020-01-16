@@ -5,6 +5,9 @@ This repository contains code to achieve histogram equlization to improve the co
 `python3 main.py IMG_0545.JPG .`
 
 ## Example results
-![Sample Result](images/res.png)
+![Sample Result](images/res_out.png)
+![Sample Result](images/IMG_0545.JPG)
+![Sample Result](images/output_name1.png)
+
 
 
