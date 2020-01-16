@@ -17,13 +17,7 @@ def help_message():
     print("Output directory")
     print("Example usages:")
     print(sys.argv[0] + "[path to input image] " +
-          "[output directory]")  # Single input, single output
-    print(sys.argv[0] + "[path to input image1] " +
-          "[path to input image2] " +
-          "[output directory]")  # Two inputs, three outputs
-    print(sys.argv[0] + "[path to input image1] " +
-          "[path to input image2] " +
-          "[output directory]")  # Two inputs, single output
+          "[output directory]")  
 
 
 # ===================================================
