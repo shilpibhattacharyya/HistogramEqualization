@@ -7,7 +7,7 @@ This repository contains code to achieve histogram equlization to improve the co
 ## Example results
 ![Sample Result](images/res_out.png)
 ![Sample Result](images/IMG_0545.JPG)
-![Sample Result](images/output_name1.png)
+![Sample Result](images/output_name.png)
 
 
 
